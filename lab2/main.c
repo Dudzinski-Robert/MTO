@@ -4,16 +4,21 @@
 int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
-			i++;		
+			i++;
 			
-			for(int j = 0; j<strlen(param); j++){
-				if(param[j] >= 65 && param[j] <= 96)
-					param[j] = param[j] + 32;
-					
-			if(param[j] >= 97 && param[j] <= 122)
-				param[j] = param[j] - 32;
+			for(int j = 0; j<strlen(param); j++) {
+			char letter = param[j];
+			
+			
+				if(letter >= 65 && letter <= 90) {
+				   param[j] = letter + 32;
+				}
 				
+				if (letter >= 97 && letter <= 122) {
+				   param[j] = letter - 32;
+				}
 			}
+			
 			printf("%s",param);
 		}else
 			putchar(format_string[i]);
