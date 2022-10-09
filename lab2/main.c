@@ -2,14 +2,13 @@
 #include <string.h>
 
 int my_printf(char *format_string, char *param){
+	int numberFlag = 0;
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
 			
 			for(int j = 0; j<strlen(param); j++) {
 			char letter = param[j];
-			
-			
 				if(letter >= 65 && letter <= 90) {
 				   param[j] = letter + 32;
 				}
@@ -20,8 +19,11 @@ int my_printf(char *format_string, char *param){
 			}
 			
 			printf("%s",param);
-		}else
+		} else if((format_string[i] == '#') && (format_string[i+1] == '.')){
+			numberFlag = 1;
+		} else{
 			putchar(format_string[i]);
+		}
 	}
 	puts("");
 }
