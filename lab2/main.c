@@ -44,10 +44,17 @@ int my_printf(char *format_string, char *param){
 				numberFlag = 0;
 				number = atoi(stringNumber);
 			}
+		}
 
+		if(number){
+			for(int i = 0; i < number; i++){
+				printf("%c", param[i]);
+			}
+
+			number = 0;
 		}
 	}
-	puts("");
+	// puts("");
 }
 
 int main(int argc, char *argv[]){
