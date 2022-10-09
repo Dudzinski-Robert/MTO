@@ -49,7 +49,13 @@ int my_printf(char *format_string, char *param){
 
 		if(number){
 			for(int i = 0; i < number; i++){
-				printf("%c", param[i]);
+				if(param[i] >= 65 && param[i] <= 90){
+					printf("%c", param[i] + 32);
+				}
+                    
+                if (param[i] >= 97 && param[i] <= 122){
+					printf("%c", param[i] - 32);
+				}
 			}
 
 			number = 0;
