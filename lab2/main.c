@@ -29,7 +29,8 @@ int my_printf(char *format_string, char *param){
 			numberFlag = 1;
 			i++;
 		} else{
-			putchar(format_string[i]);
+			if(!numberFlag)
+				putchar(format_string[i]);
 		} 
 
 		if(numberFlag){
@@ -54,7 +55,6 @@ int my_printf(char *format_string, char *param){
 			number = 0;
 		}
 	}
-	// puts("");
 }
 
 int main(int argc, char *argv[]){
