@@ -34,3 +34,7 @@ test##3ktest
 xBcxZa
 test#2k#test
 aaaa
+test # 5ktest
+zobaczymy
+test # .5ktest
+zobaczymy
