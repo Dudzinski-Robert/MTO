@@ -26,3 +26,11 @@ test#.3ktest
 zNz
 test#.4ktest
 MnnnnnM
+test#2ktest
+ax
+test#5ktest
+AbCdEfGh
+test##3ktest
+xBcxZa
+test#2k#test
+aaaa

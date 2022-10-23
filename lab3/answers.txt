@@ -12,3 +12,7 @@ testAAtest
 testbAbAtest
 testZnZtest
 testmNNNtest
+testAXtest
+testaBcDetest
+test#XbCtest
+testAA#test

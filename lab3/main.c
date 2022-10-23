@@ -7,7 +7,7 @@ int my_printf(char *format_string, char *param){
 
 	char stringNumber[100];
 	int stringNumberLength = 0;
-	int number = 0;
+	int charToPrint = 0;
 
 	for(int i=0;i<strlen(format_string);i++){
 
@@ -48,12 +48,12 @@ int my_printf(char *format_string, char *param){
 
 			if(ch == 'k'){
 				numberFlag = 0;
-				number = atoi(stringNumber);
+				charToPrint = atoi(stringNumber);
 			}
 		}
 
-		if(number){
-			for(int i = 0; i < number; i++){
+		if(charToPrint){
+			for(int i = 0; i < charToPrint; i++){
 				if(param[i] >= 65 && param[i] <= 90){
 					printf("%c", param[i] + 32);
 				}
@@ -63,7 +63,7 @@ int my_printf(char *format_string, char *param){
 				}
 			}
 
-			number = 0;
+			charToPrint = 0;
 		}
 	}
 	puts("");
