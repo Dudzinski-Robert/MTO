@@ -31,6 +31,8 @@ int my_printf(char *format_string, char *param){
 				numberFlag = 1;
 			} else if(format_string[i+1] >= 48 && format_string[i+1] <= 57){
 				numberFlag = 1;
+			} else {
+				putchar(format_string[i]);
 			}
 		} else if(!numberFlag){
 			putchar(format_string[i]);
