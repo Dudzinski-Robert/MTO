@@ -10,33 +10,31 @@ int my_printf(char *format_string, char *param){
 	int number = 0;
 
 	for(int i=0;i<strlen(format_string);i++){
-		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
-			i++;
-			
-			for(int j = 0; j<strlen(param); j++) {
-			char letter = param[j];
-				if(letter >= 65 && letter <= 90) {
-				   param[j] = letter + 32;
-				}
-				
-				if (letter >= 97 && letter <= 122) {
-				   param[j] = letter - 32;
-				}
-			}
-			
-			printf("%s",param);
-		} else if((format_string[i] == '#')){
-			if(format_string[i+1] >= 48 && format_string[i+1] <= 57){
-				numberFlag = 1;
-				if(format_string[i+1] == '.'){
-					i++;
-				}
-			}
 
-		} else{
-			if(!numberFlag)
-				putchar(format_string[i]);
-		} 
+		if(format_string[i] == '#'){
+			if(format_string[i+1] == 'k'){
+				i++;
+
+				for(int j = 0; j<strlen(param); j++) {
+					char letter = param[j];
+					if(letter >= 65 && letter <= 90) {
+						param[j] = letter + 32;
+					}
+					
+					if (letter >= 97 && letter <= 122) {
+						param[j] = letter - 32;
+					}
+				}
+				printf("%s",param);
+			} else if(format_string[i+1] == '.'){
+				i++;
+				numberFlag = 1;
+			} else if(format_string[i+1] >= 48 && format_string[i+1] <= 57){
+				numberFlag = 1;
+			}
+		} else if(!numberFlag){
+			putchar(format_string[i]);
+		}
 
 		if(numberFlag){
 			char ch = format_string[i];
