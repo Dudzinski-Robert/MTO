@@ -25,9 +25,14 @@ int my_printf(char *format_string, char *param){
 			}
 			
 			printf("%s",param);
-		} else if((format_string[i] == '#') && (format_string[i+1] == '.')){
-			numberFlag = 1;
-			i++;
+		} else if((format_string[i] == '#')){
+			if(format_string[i+1] >= 48 && format_string[i+1] <= 57){
+				numberFlag = 1;
+				if(format_string[i+1] == '.'){
+					i++;
+				}
+			}
+
 		} else{
 			if(!numberFlag)
 				putchar(format_string[i]);
