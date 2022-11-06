@@ -10,7 +10,13 @@ int my_printf(char *format_string, char *param){
 	strrev(str);
 
 	for(int i=0;i<strlen(format_string);i++){
+		if(format_string[i] == '#'){
+			if(format_string[i + 1] == 'g'){
 
+			}
+		} else {
+			putchar(format_string[i]);
+		}
 	}
 
 
