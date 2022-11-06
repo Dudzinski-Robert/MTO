@@ -12,7 +12,11 @@ int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if(format_string[i] == '#'){
 			if(format_string[i + 1] == 'g'){
-
+				i++;
+				printf("%s", str);
+				// for(int j = strlen(str) - 1; j>0; j--){
+				// 	printf
+				// }
 			}
 		} else {
 			putchar(format_string[i]);
