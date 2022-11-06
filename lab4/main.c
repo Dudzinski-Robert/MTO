@@ -3,14 +3,21 @@
 #include <stdlib.h>
 
 int my_printf(char *format_string, char *param){
+
+	int myInt = atoi(param);
+	char str[12];
+	sprintf(str, "%d", myInt);
+	strrev(str);
+
 	for(int i=0;i<strlen(format_string);i++){
 
-		
 	}
 
 
 	puts("");
 }
+
+
 
 int main(int argc, char *argv[]){
 	char buf[1024],buf2[1024];
