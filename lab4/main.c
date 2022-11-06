@@ -3,68 +3,9 @@
 #include <stdlib.h>
 
 int my_printf(char *format_string, char *param){
-	int numberFlag = 0;
-
-	char stringNumber[100];
-	int stringNumberLength = 0;
-	int charToPrint = 0;
-
 	for(int i=0;i<strlen(format_string);i++){
 
-		if(format_string[i] == '#'){
-			if(format_string[i+1] == 'k'){
-				i++;
-
-				for(int j = 0; j<strlen(param); j++) {
-					char letter = param[j];
-					if(letter >= 65 && letter <= 90) {
-						param[j] = letter + 32;
-					}
-					
-					if (letter >= 97 && letter <= 122) {
-						param[j] = letter - 32;
-					}
-				}
-				printf("%s",param);
-			} else if(format_string[i+1] == '.'){
-				i++;
-				numberFlag = 1;
-			} else if(format_string[i+1] >= 48 && format_string[i+1] <= 57){
-				numberFlag = 1;
-			} else {
-				putchar(format_string[i]);
-			}
-		} else if(!numberFlag){
-			putchar(format_string[i]);
-		}
-
-		if(numberFlag){
-			char ch = format_string[i];
-
-			if(ch >= 48 && ch <= 57){
-				stringNumber[stringNumberLength] = ch;
-				stringNumberLength++;
-			}
-
-			if(ch == 'k'){
-				numberFlag = 0;
-				charToPrint = atoi(stringNumber);
-			}
-		}
-
-		if(charToPrint){
-			for(int i = 0; i < charToPrint; i++){
-				if(param[i] >= 65 && param[i] <= 90){
-					printf("%c", param[i] + 32);
-				}
-
-				if (param[i] >= 97 && param[i] <= 122){
-					printf("%c", param[i] - 32);
-				}
-			}
-
-			charToPrint = 0;
-		}
+		
 	}
 
 
