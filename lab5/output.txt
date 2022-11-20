@@ -7,3 +7,6 @@
 -7-aaa aaa
 -8-aaa  123aaa
 -9-aaa00123aaa
+-10-aaa#005aaa
+-11-aaa1234567aaa
+-12-aa123456789aa

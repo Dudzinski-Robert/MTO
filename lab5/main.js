@@ -7,6 +7,7 @@ const shiftParam = (param) => {
     if(param === undefined){
         return('');
     }
+
     param.split('').map((item) => {
         if(item === '0'){
             return '9'
