@@ -19,8 +19,7 @@ function myPrintf(formatString, param){
         return;
     }
 
-    const padString = splitString[0][0] === '0' ? '0' : ' ';
-
+    let padString = splitString[1][0] === '0' ? '0' : ' ';
     console.log(splitString[0] + param.padStart(splitString[1], padString) + splitString[2]);
 }
 
