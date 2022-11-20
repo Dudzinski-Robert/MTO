@@ -6,7 +6,13 @@
 1234567
 -4-aaa#05gaaa
 1234567
--5-aa5gaa
+-5-aaa5gaaa
 123
--6-aa#05aa
+-6-aaa#05aaa
+123
+-7-aaa aaa
+123
+-8-aaa#5gaaa
+123
+-9-aaa#05gaaa
 123
