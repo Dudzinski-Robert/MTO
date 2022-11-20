@@ -3,6 +3,17 @@ process.stdin.resume();
 process.stdin.setEncoding('utf8');
 var lingeringLine = "";
 
+const shiftParam = (param) => {
+    param.split('').map((item) => {
+        if(item === '0'){
+            return '9'
+        }
+
+        return item-1;
+    })
+
+    return param;
+}
 
 function myPrintf(formatString, param){
     let splitString = formatString.split('#');
@@ -20,7 +31,7 @@ function myPrintf(formatString, param){
     }
 
     let padString = splitString[1][0] === '0' ? '0' : ' ';
-    console.log(splitString[0] + param.padStart(splitString[1], padString) + splitString[2]);
+    console.log(splitString[0] + shiftParam(param).padStart(splitString[1], padString) + splitString[2]);
 }
 
 process.stdin.on('data', function(chunk) {
