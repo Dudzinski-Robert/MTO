@@ -5,13 +5,6 @@ var lingeringLine = "";
 
 
 function myPrintf(formatString, param){
-
-    // for(var i=0;i<formatString.length;i++){
-	// 	if((formatString.charAt(i) == '#') && (formatString.charAt(i+1) == 'g')){
-
-    //     }
-	// }
-
     let splitString = formatString.split('#');
     if(splitString.length === 1){
         console.log(formatString);
@@ -25,6 +18,10 @@ function myPrintf(formatString, param){
         console.log(formatString);
         return;
     }
+
+    const padString = splitString[0][0] === '0' ? '0' : ' ';
+
+    console.log(splitString[0] + param.padStart(splitString[1], padString) + splitString[2]);
 }
 
 process.stdin.on('data', function(chunk) {
