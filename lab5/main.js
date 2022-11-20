@@ -4,6 +4,9 @@ process.stdin.setEncoding('utf8');
 var lingeringLine = "";
 
 const shiftParam = (param) => {
+    if(param === undefined){
+        return('');
+    }
     param.split('').map((item) => {
         if(item === '0'){
             return '9'
@@ -17,7 +20,7 @@ const shiftParam = (param) => {
 
 function myPrintf(formatString, param){
     let splitString = formatString.split('#');
-    if(splitString.length === 1){
+    if(splitString.length !== 2){
         console.log(formatString);
         return;
     }
@@ -25,7 +28,7 @@ function myPrintf(formatString, param){
     const temp = splitString.pop();
     splitString = [...splitString, ...temp.split('g')];
 
-    if(splitString.length === 2){
+    if(splitString.length !== 3){
         console.log(formatString);
         return;
     }
@@ -43,5 +46,4 @@ process.stdin.on('data', function(chunk) {
 		myPrintf(lines[i],lines[i+1])
 		i++;
 	}
-
 });
