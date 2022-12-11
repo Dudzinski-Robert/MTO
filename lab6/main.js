@@ -3,33 +3,25 @@ process.stdin.resume();
 process.stdin.setEncoding('utf8');
 var lingeringLine = "";
 
-const shiftParam = (param) => {
+const changeNumber = (param) => {
     if(param === undefined){
         return('');
     }
 
     param.split('').map((item) => {
-        if(item === '0'){
-            return '9'
+        if(item === 0) {
+            return 9;
+        } 
+        else if (item) {
+            const newNumber = (((item * 9) + 1) %10);
+            return newNumber;
         }
-
-        return item-1;
+        else {
+            return item-1;
+        }
     })
 
     return param;
-}
-
-const changeNumber = () => {
-    if(singleNumber === 0) {
-		return 9;
-	} 
-	else if (singleNumber) {
-		const newNumber = (((singleNumber * 9) + 1) %10);
-		return newNumber;
-	}
-	else {
-		return singleNumber-1;
-	}
 }
 
 function myPrintf(formatString, param){
@@ -48,7 +40,7 @@ function myPrintf(formatString, param){
     }
 
     let padString = splitString[1][0] === '0' ? '0' : ' ';
-    console.log(splitString[0] + shiftParam(param).padStart(splitString[1], padString) + splitString[2]);
+    console.log(splitString[0] + changeNumber(param).padStart(splitString[1], padString) + splitString[2]);
 }
 
 process.stdin.on('data', function(chunk) {
