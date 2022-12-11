@@ -1,0 +1,24 @@
+-1-aaa#5gaaa
+123
+-2-aaa#05gaaa
+123
+-3-aaa#5gaaa
+1234567
+-4-aaa#05gaaa
+1234567
+-5-aaa5gaaa
+123
+-6-aaa#05aaa
+123
+-7-aaa aaa
+123
+-8-aaa#5gaaa
+123
+-9-aaa#05gaaa
+123
+-10-aaa#005aaa
+123
+-11-aaa#05gaaa
+1234567
+-12-aa#2gaa
+123456789
