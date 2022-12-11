@@ -4,28 +4,22 @@ process.stdin.setEncoding('utf8');
 var lingeringLine = "";
 
 const changeNumber = (param) => {
-    if(param === undefined){
-        return('');
-    }
-
+    let newParam = "";
     param.split('').map((item) => {
         if(item === 0) {
-            return 9;
+            newParam += "9";
         } 
         else if (item) {
             const newNumber = (((item * 9) + 1) %10);
-            return newNumber;
-        }
-        else {
-            return item-1;
+            newParam += newNumber.toString();
         }
     })
 
-    return param;
+    return newParam.toString();
 }
 
 function myPrintf(formatString, param){
-    let splitString = formatString.split('#');
+    let splitString = formatString.split('#.');
     if(splitString.length !== 2){
         console.log(formatString);
         return;
