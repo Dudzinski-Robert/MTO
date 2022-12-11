@@ -19,6 +19,18 @@ const shiftParam = (param) => {
     return param;
 }
 
+const changeNumber = () => {
+    if(singleNumber === 0) {
+		return 9;
+	} 
+	else if (singleNumber) {
+		const newNumber = (((singleNumber * 9) + 1) %10);
+		return newNumber;
+	}
+	else {
+		return singleNumber-1;
+	}
+}
 
 function myPrintf(formatString, param){
     let splitString = formatString.split('#');
