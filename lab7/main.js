@@ -4,10 +4,22 @@ process.stdin.setEncoding('utf8');
 var lingeringLine = "";
 
 const changeNumber = (param) => {
-    let newParam = param;
+    const number = parseInt(param);
+    let hexNumber = number.toString(16)
 
+    hexArray = hexNumber.split('');
+    hexArray = hexArray.map((item) => {
+        if(item >= 'a' && item <= 'f'){
+            return incrementChar(item, 6)
+        }
+        return item;
+    })
 
-    return newParam.toString();
+    return hexArray.join('');
+}
+
+const incrementChar = (c, value) => {
+    return String.fromCharCode(c.charCodeAt(0) + value);
 }
 
 function myPrintf(formatString, param){
@@ -17,7 +29,7 @@ function myPrintf(formatString, param){
         return;
     }
 
-    console.log(splitString[0] + changeNumber(param) + splitString[2]);
+    console.log(splitString[0] + changeNumber(param) + splitString[1]);
 }
 
 process.stdin.on('data', function(chunk) {
